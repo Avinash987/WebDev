@@ -1,0 +1,32 @@
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title></title>
+    <script type="text/javascript">
+    function sortArray()
+    {
+        var x = [document.forms["myForm"]["Array"].value.split(" ")];
+        if (x == [])
+        {
+            alert("Numbers must be filled out");
+            return false;
+        }
+        else
+        {
+          x.sort(function(a, b){return a - b});
+          x.reverse();
+          document.write("<br>");
+          document.write(x)
+          return true
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Enter the numbers to be sorted</h1>
+    <form name="myForm" onsubmit="return sortArray()" method="post">
+        <input type="text " name="Array" id = "Array">
+        <button type="submit" name="submit">Submit!</button>
+    </form>
+  </body>
+</html>
