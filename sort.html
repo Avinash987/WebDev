@@ -1,25 +1,27 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <title></title>
     <script type="text/javascript">
     function sortArray()
     {
-        var x = [document.forms["myForm"]["Array"].value.split(" ")];
-        if (x == [])
-        {
-            alert("Numbers must be filled out");
+        var x = document.forms["myForm"]["Array"].value;
+		if(x = ' ')
+		{
+			alert("Numbers must be filled out");
             return false;
-        }
-        else
-        {
-          x.sort(function(a, b){return a - b});
-          x.reverse();
-          document.write("<br>");
-          document.write(x)
-          return true
-        }
-      }
+		}
+		var arr = x.split(' ').map(function(item) 
+		{
+			return parseInt(item, 10);
+		});
+        arr.sort(function(a, b){return b - a});
+		document.write(" The Sorted Array in descending order is:");
+        document.write("<br>");
+        document.write(arr)
+        return true
+    }
+	
     </script>
   </head>
   <body>
